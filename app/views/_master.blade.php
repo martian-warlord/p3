@@ -8,9 +8,9 @@
  
 {{ HTML::style('http://netdna.bootstrapcdn.com/bootswatch/3.1.0/united/bootstrap.min.css') }}
 		<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('/css/style.css') }}">
 
-		{{ HTML::script('js/respond.js') }}
+		{{ HTML::script('/js/respond.js') }}
 		<link href="{{ URL::asset('http://fonts.googleapis.com/css?family=Lato%7CCherry+Cream+Soda%7CCookie') }}" rel='stylesheet' type='text/css'>
 		
 	<script>
@@ -41,6 +41,6 @@ window.App = window.App || {};
 
 
 {{ HTML::script('http://code.jquery.com/jquery-latest.min.js') }}
-{{ HTML::script('js/bootstrap.min.js') }}
+{{ HTML::script('/js/bootstrap.min.js') }}
 </body>
 </html>

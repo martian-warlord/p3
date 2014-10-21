@@ -16,6 +16,11 @@ Route::get('/', function()
 	return View::make('home');
 });
 
+Route::get('paragraphs', function()
+{
+    return View::make('para');
+});
+
 // Route::get('/new', function() {
 
 //     $view  = '<form method="POST">';
