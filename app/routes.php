@@ -13,5 +13,22 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
+
+// Route::get('/new', function() {
+
+//     $view  = '<form method="POST">';
+//     $view .= 'Title: <input type="text" name="title">';
+//     $view .= '<input type="submit">';
+//     $view .= '</form>';
+//     return $view;
+
+// });
+
+// Route::get('/simple/{squirrel}', function($squirrel)
+// {
+//     $data['squirrel'] = $squirrel;
+
+//     return View::make('simple', $data);
+// });
