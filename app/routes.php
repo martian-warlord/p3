@@ -27,10 +27,25 @@ echo implode('<p>', $paragraphs);
     
 });
 
+
+
 Route::get('users', function()
 {
 
-return View::make('userz')-> with('success','1');
+$users_routed =  $_GET["numberUsers"];
+
+$faker = Faker\Factory::create();
+
+$agento = "";
+
+for ($i=0; $i < $users_routed; $i++) {
+
+ $agento .= $faker->name;
+
+
+}
+
+return View::make('userz')-> with('success', $agento);
 
 
 

@@ -12,11 +12,7 @@
 			<div class="jumbotron" id="lorax">
 			  <div class="container">
 
-			        @if ($success == 1)
-        <p>Success!</p>
-    @else
-        <p>Error!</p>
-    @endif
+			        {{{$success}}}
 			        
 
 			  </div>
