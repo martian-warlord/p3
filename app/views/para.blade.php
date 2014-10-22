@@ -23,7 +23,7 @@
 			        <h2 >Need more paragraphs?</h2>
 			  
 						{{ Form::open(array('url' => 'paragraphs', 'method' => 'GET'))}}
-						{{ Form::label('numberParagraphs', '[10 max]') }}
+						{{ Form::label('numberParagraphs', '[1-10]') }}
 					    {{ Form::text('numberParagraphs', '1') }}
 					    {{ Form::submit('go!') }}
 						{{ Form::close() }}

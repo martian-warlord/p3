@@ -22,7 +22,7 @@
 			  <div class="container">
 			        <h2>Need more fake users?</h2>
 						{{ Form::open(array('url' => 'users', 'method' => 'GET'))}}
-						{{ Form::label('numberUsers', '[100 max]') }}
+						{{ Form::label('numberUsers', '[1-10]') }}
 					    {{ Form::text('numberUsers', '1') }}
     					{{ Form::submit('go!') }}
 						{{ Form::close() }}

@@ -25,26 +25,40 @@ Route::get('paragraphs', function()
 {
 
 
+if ( isset($_GET["numberParagraphs"]))
+
+	{
+
+		if (is_numeric($_GET["numberParagraphs"])) 
+			{
+
+				$paragraphs_routed =  $_GET["numberParagraphs"];  
+				$generator = new Badcow\LoremIpsum\Generator();
+				$lorem_paragraphs = "";
+
+					if ($paragraphs_routed > 10)
+						{
+						$paragraphs_routed = 10;
+						}
+
+					if ($paragraphs_routed < 1)
+						{
+						return View::make('neednumber');
+						}
 
 
-$paragraphs_routed =  $_GET["numberParagraphs"];  
-$generator = new Badcow\LoremIpsum\Generator();
-$lorem_paragraphs = "";
+				for ($i=0; $i < $paragraphs_routed; $i++)
+					{
+					$paragraphs = $generator->getParagraphs(1);
+					$lorem_paragraphs .= implode('<p>', $paragraphs);
+					$lorem_paragraphs .= '</p>';
+					}
 
-if ($paragraphs_routed > 10){
-$paragraphs_routed = 10;
-}
+				return View::make('para')-> with('success', $lorem_paragraphs);
+			}
 
-for ($i=0; $i < $paragraphs_routed; $i++){
-$paragraphs = $generator->getParagraphs(1);
-$lorem_paragraphs .= implode('<p>', $paragraphs);
-$lorem_paragraphs .= '</p>';
-}
-
-return View::make('para')-> with('success', $lorem_paragraphs);
-
-
-
+					return View::make('neednumber');
+	} 
 
 
 });
@@ -54,28 +68,48 @@ return View::make('para')-> with('success', $lorem_paragraphs);
 Route::get('users', function()
 {
 
-$users_routed =  $_GET["numberUsers"];
-$faker = Faker\Factory::create();
-$agento = '';
+
+if ( isset($_GET["numberUsers"])) 
+
+	{
+		if (is_numeric($_GET["numberUsers"])) 
+			{
+
+			$users_routed =  $_GET["numberUsers"];
+			$faker = Faker\Factory::create();
+			$agento = '';
 
 
-if ($users_routed > 10){
-$users_routed = 10;
-}
+				if ($users_routed > 10)
+					{
+					$users_routed = 10;
+					}
 
-for ($i=0; $i < $users_routed; $i++) {
-$agento .= '<p>';
- $agento .= $faker->name;
-$agento .= '</br>';
- $agento .= $faker->company;
-$agento .= '</br>';
- $agento .= $faker->bs;
-$agento .= '</br>';
- $agento .= $faker->address;
-$agento .= '</p>';
-}
-return View::make('userz')-> with('success', $agento);
+				if ($users_routed < 1)
+					{
+					return View::make('neednumber');
+					}
 
+
+
+			for ($i=0; $i < $users_routed; $i++) 
+				{
+				$agento .= '<p>';
+				$agento .= $faker->name;
+				$agento .= '</br>';
+				$agento .= $faker->company;
+				$agento .= '</br>';
+				$agento .= $faker->bs;
+				$agento .= '</br>';
+				$agento .= $faker->address;
+				$agento .= '</p>';
+				}
+			return View::make('userz')-> with('success', $agento);
+			} 
+				
+				return View::make('neednumber');		
+					
+	} 
 
 
 });
