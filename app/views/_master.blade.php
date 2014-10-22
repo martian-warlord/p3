@@ -27,7 +27,11 @@ window.App = window.App || {};
 <header>
 			<div class="jumbotron">
 			  <div class="container">
-			        <h1 style="font-family: 'Cherry Cream Soda', cursive;">Developers Best Friend</h1>
+			        <a href='/'><h1>Developers Best Friend</h1></a>
+			        <h2>A quick and dirty app for generating dummy data. </h2> 
+			        	<small>Do you need placeholder text for your layout?  
+			        		Do you need fake users to test your database?  
+			        		You've come to the right place.</small>
 			  </div>
 			</div>
 </header>

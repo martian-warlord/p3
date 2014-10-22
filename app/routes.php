@@ -16,15 +16,37 @@ Route::get('/', function()
 	return View::make('home');
 });
 
+Route::get('/home', function()
+{
+	return View::make('home');
+});
+
 Route::get('paragraphs', function()
 {
 
-$paragraphs_routed =  $_GET["numberParagraphs"];  
 
+
+
+$paragraphs_routed =  $_GET["numberParagraphs"];  
 $generator = new Badcow\LoremIpsum\Generator();
-$paragraphs = $generator->getParagraphs($paragraphs_routed);
-echo implode('<p>', $paragraphs);
-    
+$lorem_paragraphs = "";
+
+if ($paragraphs_routed > 10){
+$paragraphs_routed = 10;
+}
+
+for ($i=0; $i < $paragraphs_routed; $i++){
+$paragraphs = $generator->getParagraphs(1);
+$lorem_paragraphs .= implode('<p>', $paragraphs);
+$lorem_paragraphs .= '</p>';
+}
+
+return View::make('para')-> with('success', $lorem_paragraphs);
+
+
+
+
+
 });
 
 
@@ -33,18 +55,25 @@ Route::get('users', function()
 {
 
 $users_routed =  $_GET["numberUsers"];
-
 $faker = Faker\Factory::create();
-
-$agento = "";
-
-for ($i=0; $i < $users_routed; $i++) {
-
- $agento .= $faker->name;
+$agento = '';
 
 
+if ($users_routed > 10){
+$users_routed = 10;
 }
 
+for ($i=0; $i < $users_routed; $i++) {
+$agento .= '<p>';
+ $agento .= $faker->name;
+$agento .= '</br>';
+ $agento .= $faker->company;
+$agento .= '</br>';
+ $agento .= $faker->bs;
+$agento .= '</br>';
+ $agento .= $faker->address;
+$agento .= '</p>';
+}
 return View::make('userz')-> with('success', $agento);
 
 
