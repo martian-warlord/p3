@@ -10,10 +10,10 @@
 @section ('content')
 
 			<div class="jumbotron" id="lorax">
-			  <div class="container" style="font-family: 'Cherry Cream Soda', cursive;">
-			        <h2 style="font-family: 'Cherry Cream Soda', cursive;">Lorem Ipsum Generator</h2>
-			        <h3 style="font-family: 'Cherry Cream Soda', cursive;">Specify how many paragraphs you want.</h3>
-						{{ Form::open(array('url' => 'paragraphs'))}}
+			  <div class="container" >
+			        <h2 >Lorem Ipsum Generator</h2>
+			        <h3 >Specify how many paragraphs you want.</h3>
+						{{ Form::open(array('url' => 'paragraphs', 'method' => 'GET'))}}
 						{{ Form::label('numberParagraphs', '[10 max]') }}
 					    {{ Form::text('numberParagraphs', '1') }}
 					    {{ Form::submit('go!') }}
@@ -27,7 +27,7 @@
 			  <div class="container">
 			        <h2>Random User Generator.</h2>
 			        <h3>Specify how many users you want.</h3>
-						{{ Form::open(array('url' => 'users'))}}
+						{{ Form::open(array('url' => 'users', 'method' => 'GET'))}}
 						{{ Form::label('numberUsers', '[100 max]') }}
 					    {{ Form::text('numberUsers', '1') }}
     					{{ Form::submit('go!') }}

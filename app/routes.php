@@ -18,8 +18,48 @@ Route::get('/', function()
 
 Route::get('paragraphs', function()
 {
-    return View::make('para');
+
+$paragraphs_routed =  $_GET["numberParagraphs"];  
+
+$generator = new Badcow\LoremIpsum\Generator();
+$paragraphs = $generator->getParagraphs($paragraphs_routed);
+echo implode('<p>', $paragraphs);
+    
 });
+
+Route::get('users', function()
+{
+
+return View::make('userz')-> with('success','1');
+
+
+
+});
+
+
+
+// Route::get('retailers/{region}/{name}', function($region, $name) {
+
+//     $query = Table::newQuery();
+
+//     if ($region == 'country')
+//     {
+//         $query->where('country', $name);
+//     }
+//     else
+
+//     if ($region == 'city')
+//     {
+//         $query->where('city', $name);
+//     }
+
+//     return View::make('retailers.show')->with('table' => $query->get());
+
+// });
+
+
+
+
 
 // Route::get('/new', function() {
 

@@ -12,7 +12,11 @@
 			<div class="jumbotron" id="lorax">
 			  <div class="container">
 
-			        <h2>{{{ $random_users }}}</h2>
+			        @if ($success == 1)
+        <p>Success!</p>
+    @else
+        <p>Error!</p>
+    @endif
 			        
 
 			  </div>

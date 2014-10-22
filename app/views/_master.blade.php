@@ -27,7 +27,7 @@ window.App = window.App || {};
 <header>
 			<div class="jumbotron">
 			  <div class="container">
-			        <h1>Developers Best Friend</h1>
+			        <h1 style="font-family: 'Cherry Cream Soda', cursive;">Developers Best Friend</h1>
 			  </div>
 			</div>
 </header>
