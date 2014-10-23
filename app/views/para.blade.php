@@ -20,7 +20,9 @@
 
 			<div class="jumbotron" id="lorax">
 			  <div class="container" >
-			        <h2 >Need more paragraphs?</h2>
+			        <h2 >
+			        	Need more paragraphs?
+			        </h2>
 			  
 						{{ Form::open(array('url' => 'paragraphs', 'method' => 'GET'))}}
 						{{ Form::label('numberParagraphs', '[1-10]') }}

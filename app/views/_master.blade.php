@@ -10,7 +10,7 @@
 
 
 
-	{{ HTML::style('http://netdna.bootstrapcdn.com/bootswatch/3.1.0/united/bootstrap.min.css') }}
+	{{ HTML::style('http://netdna.bootstrapcdn.com/bootswatch/3.1.0/readable/bootstrap.min.css') }}
 	<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
 	<link href="{{ URL::asset('http://fonts.googleapis.com/css?family=Lato%7CCherry+Cream+Soda%7CCookie') }}" rel='stylesheet' type='text/css'>
 		

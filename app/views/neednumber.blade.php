@@ -9,7 +9,7 @@
 
 @section ('content')
 
-			<div class="jumbotron" style="background-color: yellow; color: red;">
+			<div class="jumbotron" style="background-color: red; color: white;">
 			  <div class="container" >
 			        <h2 >Whoopsie!  Try again.  Please enter 1,2,3 numbers only.  Thanks!</h2>
 			  </div>
