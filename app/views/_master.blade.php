@@ -25,7 +25,7 @@
 
 			        	<a href='/'>
 			        	<h1>
-			        		Developers Best Friend
+			        		Developer&#39;s Best Friend
 			        	</h1>
 			        	</a>
 
